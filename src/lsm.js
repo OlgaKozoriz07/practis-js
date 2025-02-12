@@ -859,3 +859,139 @@
 
 // const fourth = { ...second, ...first };
 // console.log(fourth); // { propA: 5, propB: 10, propC: 50, propD: 20 }
+
+// const playlist = {
+//   name: 'My amazing playlist',
+//   rating: 5,
+//   tracks: ['track-1', 'track-2', 'track-3'],
+
+//   changeName(newName) {
+//     // console.log('this: ', this);
+//     this.name = newName;
+//   },
+//   updateRating(newRating) {
+//     this.rating = newRating;
+//   },
+// };
+// console.log(playlist);
+
+// playlist.changeName('Some name');
+// playlist.updateRating(4);
+
+/*----------spread--------*/
+
+// const temps = [12, 17, 34, 10, 88, 100];
+
+// const minTemp = Math.min(...temps);
+// const maxTemp = Math.max(...temps);
+
+// console.log('temps: ', temps);
+// console.log('minTemp: ', minTemp);
+// console.log('maxTemp: ', maxTemp);
+
+// const defaultSettings = {
+//   theme: 'light',
+//   showNotifications: true,
+//   hideSidebar: false,
+// };
+
+// const userSettings = {
+//   theme: 'dark',
+//   showNotifications: false,
+// };
+
+// const finalSettings = {
+//   ...defaultSettings,
+//   ...userSettings,
+// };
+
+// console.log('defaultSettings: ', defaultSettings);
+// console.log('userSettings: ', userSettings);
+// console.log('finalSettings: ', finalSettings);
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// const names = students.map(student => student.name);
+// console.log(names); // ["Mango", "Poly", "Ajax", "Kiwi", "Houston"]
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = scores.toSorted();
+
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Tanith Lee',
+//   'Bernard Cornwell',
+//   'Robert Sheckley',
+//   'Fyodor Dostoevsky',
+// ];
+
+// const ascendingReleaseDates = releaseDates.toSorted();
+
+// const alphabeticalAuthors = authors.toSorted();
+
+// console.log(ascendingReleaseDates);
+// console.log(alphabeticalAuthors);
+
+// const students = [
+//   { name: 'Mango', score: 83 },
+//   { name: 'Poly', score: 59 },
+//   { name: 'Ajax', score: 37 },
+//   { name: 'Kiwi', score: 94 },
+// ];
+
+// const inAscendingScoreOrder = students.toSorted(
+//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+// );
+
+// const inDescendingScoreOrder = students.toSorted(
+//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+// );
+
+// const inAlphabeticalOrder = students.toSorted((firstStudent, secondStudent) =>
+//   firstStudent.name.localeCompare(secondStudent.name)
+// );
+
+// console.log(inAscendingScoreOrder);
+// console.log(inDescendingScoreOrder);
+// console.log(inAlphabeticalOrder);
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   {
+//     title: 'The Dreams in the Witch House',
+//     author: 'Howard Lovecraft',
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter(book => book.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .toSorted();
+
+// console.log(names);

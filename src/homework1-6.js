@@ -286,3 +286,155 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
 /*--------------------HOMEWORK 4----------------*/
+
+/*
+? Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.
+? Функція оголошує два параметри:
+
+? products — обєкт, у якому ключі містять назви товарів, 
+? а їхні значення — кількість цих товарів. Наприклад, { apples: 2, grapes: 4 }.
+? containerSize — число, максимальна кількість одиниць товарів, яку в себе може вмістити контейнер.
+? Функція має повернути результат перевірки, чи помістяться всі товари в контейнер. 
+? Тобто порахувати загальну кількість товарів в обєкті products і повернути true, 
+? якщо вона менше або дорівнює containerSize, і false, якщо ні.
+
+*/
+
+// function isEnoughCapacity(products, containerSize) {
+//   let totalProduct = 0;
+//   for (let product in products) {
+//     totalProduct += products[product];
+//   }
+//   return totalProduct <= containerSize;
+// }
+
+// console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
+
+// console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
+
+// console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
+
+// console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
+
+/*
+? Напиши функцію calcAverageCalories(days), яка повертає середньодобове значення кількості калорій, 
+? які спортсмен споживав протягом тижня. 
+? Функція очікує один параметр: days — масив обєктів. 
+? Кожен обєкт описує день тижня та кількість калорій calories, спожитих спортсменом, у цей день. 
+? Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. 
+? У консоль будуть виведені результати її викликів.
+
+*/
+// function calcAverageCalories(days) {
+//   if (days.length === 0) {
+//     //перевіряємо чи список днів пустий, якщо так, то повретаємо 0
+//     return 0;
+//   }
+//   let totalCalories = 0; // створюємо загальну к-сть калрій
+//   for (let day of days) {
+//     // проходимо по кожному дню зі списку і додаємо його калорії до тотал
+//     totalCalories += day.calories;
+//   }
+//   const averageCalories = totalCalories / days.length; // далі ділимо загальну к-сть калорій на к-сть днів і отримуємо середнє значення
+//   return averageCalories;
+// }
+
+// console.log(
+//   calcAverageCalories([
+//     { day: 'monday', calories: 3010 },
+//     { day: 'tuesday', calories: 3200 },
+//     { day: 'wednesday', calories: 3120 },
+//     { day: 'thursday', calories: 2900 },
+//     { day: 'friday', calories: 3450 },
+//     { day: 'saturday', calories: 3280 },
+//     { day: 'sunday', calories: 3300 },
+//   ])
+// ); // 3180
+
+// console.log(
+//   calcAverageCalories([
+//     { day: 'monday', calories: 2040 },
+//     { day: 'tuesday', calories: 2270 },
+//     { day: 'wednesday', calories: 2420 },
+//     { day: 'thursday', calories: 1900 },
+//     { day: 'friday', calories: 2370 },
+//     { day: 'saturday', calories: 2280 },
+//     { day: 'sunday', calories: 2610 },
+//   ])
+// ); // 2270
+
+// console.log(calcAverageCalories([])); // 0
+
+/*
+? Обєкт profile описує профіль користувача на ігровій платформі. 
+? У його властивостях зберігається імя профілю username та кількість активних годин playTime, проведених у грі.
+
+? Доповни обєкт profile методами для роботи з його властивостями.
+
+? Метод changeUsername(newName) повинен приймати рядок (нове імя) в параметр newName 
+? та змінювати значення  властивості username на нове. Нічого не повертає.
+? Метод updatePlayTime(hours) повинен приймати число (кількість годин) 
+? у параметр hours та збільшити на нього значення властивості playTime. Нічого не повертає.
+? Метод getInfo() має повертати рядок формату <Username> has <amount> active hours!, де <Username> — це імя профілю, а <amount> — кількість ігрових годин.
+*/
+
+// const profile = {
+//   username: 'Jacob',
+//   playTime: 300,
+
+//   changeUsername(newName) {
+//     this.username = newName;
+//   },
+//   updatePlayTime(hours) {
+//     this.playTime += hours;
+//   },
+//   getInfo() {
+//     return `${this.username} has ${this.playTime} active hours!`;
+//   },
+// };
+
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+// profile.changeUsername('Marco');
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+/*
+? Напиши стрілочну функцію getUserNames(users), 
+? яка прийматиме один параметр users — масив обєктів користувачів. 
+? Функція має повертати масив імен усіх користувачів (властивість name) із масиву users.
+
+*/
+
+/*
+? Напиши стрілочну функцію getUsersWithFriend(users, friendName) , яка прийматиме два параметра:
+? перший параметр users — масив обєктів користувачів
+? другий параметр friendName — імя друга для пошуку.
+? Функція має повертати масив усіх користувачів із масиву users, 
+? у яких є друг з іменем friendName. Друзі кожного користувача зберігаються у властивості friends. 
+? Якщо користувачів, у яких є такий друг немає, то функція має повернути порожній масив.
+
+? Поради:
+? Метод filter() можна використовувати для створення нового масиву з елементами, 
+? які задовольняють певну умову.
+? Використовуй метод includes() для перевірки, чи масив friends містить friendName.
+
+*/
+
+/*
+? Напиши стрілочну функцію sortByDescendingFriendCount(users) , 
+? яка прийматиме один параметр users — масив обєктів користувачів.
+? Функція має повертати масив усіх користувачів, 
+? відсортованих за спаданням кількостій їх друзів (властивість friends).
+*/
+
+/*
+? Напиши стрілочну функцію getTotalBalanceByGender(users, gender), яка прийматиме два параметра:
+? перший параметр users — масив обєктів користувачів,
+? другий параметр gender — рядок, що зберігає стать.
+? Функція має використовувати ланцюжок виклику методів 
+? та повертати загальний баланс користувачів (властивість balance), 
+? стать яких (властивість gender) збігається зі значенням параметра gender.
+*/
